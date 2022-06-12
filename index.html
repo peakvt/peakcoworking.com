@@ -1,0 +1,359 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000">
+  <title>Peak Coworking — Brattleboro, Vermont</title>
+  <link rel="icon" href="favicon.ico" type="image/png">
+  <meta name="description" content="Shared and dedicated workspaces for a small group of remote workers, creatives, graphic designers, and web developers in downtown Brattleboro.">
+  <style>
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 18px;
+      text-align: center;
+      padding: 0;
+      font-weight: 300;
+      background: #000;
+      color: #ccc;
+      margin: 0;
+    }
+    section {
+      margin: 0;
+      padding: 2rem 0;
+    }
+
+    p {
+      line-height: 1.5em;
+      font-size: 1.5rem;
+    }
+
+    @keyframes fadein {
+      0% {
+        opacity: 0;
+        transform: translateY(0) rotate(180deg);
+      }
+      5% {
+        opacity: 1;
+      }
+      10% {
+        opacity: 1;
+      }
+      30% {
+        /*opacity: 1;*/
+      }
+      50% {
+        opacity: 0;
+        transform: translateY(-100%) rotate(180deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100%) rotate(180deg);
+      }
+    }
+
+    .page {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      padding: 0;
+      height: 100%;
+    }
+    .page > div {
+      padding: 0;
+    }
+    #more {
+      font-weight: bold;
+      font-size: 42px;
+      height:      25px;
+      width:       25px;
+      line-height: 25px;
+      display: inline-block;
+      opacity: 0;
+      padding: 0;
+      position: relative;
+      top: -10px;
+      transform: rotate(45deg);
+      animation: fadein 2s 4s ease-out infinite;
+      background: url('data:image/svg+xml;utf8,<svg aria-hidden="true" data-prefix="fas" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><path fill="%23fff" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" class=""></path></svg>') center -5px no-repeat;
+    }
+
+    .phone {
+      display: inline-block;
+      color: #aaa;
+      margin-bottom: 0rem;
+      height: 1em;
+    }
+    .phone span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      position: relative;
+      top: 0px;
+      margin-right: .75em;
+      transform: rotate(90deg);
+      background: url('data:image/svg+xml;utf8,<svg aria-hidden="true" data-prefix="fas" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-phone fa-w-16 fa-2x"><path fill="%234c8bf5" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z" class=""></path></svg>') center center no-repeat;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .btns a {
+      padding: .75em 1.25em;
+      font-size: 1.5rem;
+      text-decoration: none;
+      background: #477389;
+      background: #4c8bf5;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .btns a i {
+      display: inline-block;
+      height: 1.5em;
+      width: 1.5em;
+      position: relative;
+      left: -.25em;
+      margin-right: .5em;
+      line-height: 1.5em;
+      text-align: middle;
+      font-style: normal;
+      color: #477389;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .btns {
+      margin: 2em 0 4em 0;
+    }
+    .btns a {
+      margin: 0 0 0 1em;
+    }
+    .btns a:first-child {
+      margin: 0;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 1.5em;
+      margin: 0rem 0 1em 0;
+    }
+
+    .peak {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      font-size: 36px;
+      color: #fff;
+      display: inline-block;
+      overflow: hidden;
+      margin: 1em auto 5rem auto;
+    }
+    .peak > div {
+      display: table;
+      width: 100%;
+      height: 100%;
+    }
+    .peak > div > div {
+      display: table-cell;
+      background: #477389;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .peak .logo {
+      font-size: 1em;
+      letter-spacing: .11111111111em;
+      line-height: 1em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .peak .sublogo {
+      font-size: .444444444444em;
+      letter-spacing: .1875em;
+      line-height: 1em;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .x {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .x:before {
+      display: block;
+      content: "";
+      width: 100%;
+    }
+    .x > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .x > img {
+      width: 100%;
+      font-size: 0;
+      line-height: 0;
+    }
+    .x.x1-1:before {
+      padding-top: 100%;
+    }
+    .x.x3-2:before {
+      padding-top: 66.666666666666666%;
+    }
+    .x.x4-3:before {
+      padding-top: 75%;
+    }
+
+    section .x {
+      margin-top: 5px;
+    }
+    section .x:first-child {
+      margin-top: 0;
+    }
+
+    footer {
+      padding: 0 2em 5rem 2em;
+      text-align: center;
+    }
+    footer p {
+      margin: 0;
+    }
+    footer a {
+      color: #aaa;
+      display: inline-block;
+      padding: 1.5em;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    footer img {
+      width: 24px;
+      display: inline-block;
+      margin-bottom: 1em;
+    }
+    footer p {
+      position: relative;
+      display: inline-block;
+    }
+    footer img {
+      margin: 0;
+      width: 34px;
+      position: relative;
+      float: left;
+      top: .5em;
+      margin-right: .35em;
+    }
+
+
+
+    @media (min-width: 450px) {
+      body {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      section .x {
+        margin-top: 4rem;
+      }
+      .peak {
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        font-size: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="page">
+    <div></div>
+    <div>
+      <p>
+        <div class="peak">
+          <div>
+            <div>
+              <div class="logo">Peak</div>
+              <div class="sublogo">coworking</div>
+            </div>
+          </div>
+        </div>
+      </p>
+      <p></p>
+      <p>
+        Brattleboro, Vermont
+      </p>
+    </div>
+    <div><div id="more"></div></div>
+  </section>
+  <section style="padding: 0;">
+    <div class="x x3-2"><img src="img/1600/laptop.jpg"
+                             srcset="img/1600/laptop.jpg 1600w, img/800/laptop.jpg 800w"
+                             alt="Laptop with coffee, phone, and notebook"
+                             loading="lazy"
+                        /></div>
+    <div class="x x4-3"><img src="img/1600/desk1.jpg"
+                             srcset="img/1600/desk1.jpg 1600w, img/800/desk1.jpg 800w"
+                             alt="Coworking desk with flowers, large monitor, and indoor plant"
+                             loading="lazy"
+                        /></div>
+    <div class="x x4-3"><img src="img/1600/desk2.jpg"
+                             srcset="img/1600/desk2.jpg 1600w, img/800/desk2.jpg 800w"
+                             alt="Coworking desk with flowers and standing desk with offline dinosaur"
+                             loading="lazy"
+                        /></div>
+    <div class="x x4-3"><img src="img/1600/aspens.jpg"
+                             srcset="img/1600/aspens.jpg 1600w, img/800/aspens.jpg 800w"
+                             alt="Two desks with aspen tree canvas artwork"
+                             loading="lazy"
+                        /></div>
+    <div class="x x4-3"><img src="img/1600/couch.jpg"
+                             srcset="img/1600/couch.jpg 1600w, img/800/couch.jpg 800w"
+                             alt="Couch with two plants, coffee table, and Banksy Balloon Girl canvas on wall"
+                             loading="lazy"
+                        /></div>
+  </section>
+  <section style=" padding: 8rem 0">
+    <p>
+      Reserved Desks Only
+      <br />
+      <span data-nosnippet>$200 monthly</span>
+    </p>
+    <p class="btns">
+      <a id="email" href="mailto:no-contact@peakcoworking.com"><i>➔</i>Email us</a>
+    </p>
+    <p style="font-size: 1em">
+      Daily or weekly options not available
+    </p>
+  </section>
+  <footer>
+    <!--
+    <div><a href="https://www.facebook.com/peakcoworking.vermont/"><svg height="2em" width="2em" aria-hidden="true" data-prefix="fab" data-icon="facebook-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-facebook-square fa-w-14 fa-3x"><path fill="currentColor" d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z" class=""></path></svg></a></div>
+    <div><a class="phone" href="tel:0000000000"><span></span>(000) 000-0000</a></div>
+    -->
+  </footer>
+  <script>
+    document.head.innerHTML += '<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" type="text/css">';
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','js/lib/analytics.js','ga');
+    /__adx=/.test(document.cookie) || ga('create', 'UA-119381568-1', 'auto');
+    ga('send', 'pageview');
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('#more')?.classList.add('hidden');
+    }, { passive: true, once: true });
+
+    document.querySelector('#email')?.addEventListener('click', e => {
+      e.preventDefault()
+      const a = document.createElement('a')
+      a.target='_blank'
+      a.href=atob('bWFpbHRvOlBlYWsgQ293b3JraW5nIDxjb250YWN0LWYyYTVAcGVha2Nvd29ya2luZy5jb20+P3N1YmplY3Q9SGVsbG8=')
+      a.click()
+    })
+  </script>
+</body>
